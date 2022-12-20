@@ -1,0 +1,23 @@
+<ng-container *ngIf="characters && !(loading$ | async); else tempLoader">
+  <ng-container *ngFor="let character of characters | paginate: { itemsPerPage: 20, currentPage: page, totalItems: info.count }">
+    <div class="character">
+      <h2 class="title" routerLink="/{{character.id}}">{{character.name}}</h2>
+      <div class="info">
+        <img src="{{character.image}}" alt="{{character.name}}" />
+        <div class="details">
+          <p>Gender: {{character.gender}}</p>
+          <p>Species: {{character.species}}</p>
+          <p>Status: {{character.status}}</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <pagination-controls
+    (pageChange)="pageChanged($event)"
+    [maxSize]="5"
+  ></pagination-controls>
+</ng-container>
+
+<ng-template #tempLoader>
+  <span>Loading....</span>
+</ng-template>

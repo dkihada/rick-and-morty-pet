@@ -1,0 +1,61 @@
+<app-header [title]="'Filters'"></app-header>
+<input type="text" placeholder="Name" (change)="filterName($event)"/>
+
+<ng-container [formGroup]="filterForm">
+  <div>
+    <h3>Gender</h3>
+    <div class="option">
+      <input
+        type="radio"
+        id="male"
+        name="gender"
+        value="Male"
+        formControlName="gender"
+      >
+      <label for="male">Male</label>
+    </div>
+    <div class="option">
+      <input
+        type="radio"
+        id="female"
+        name="gender"
+        value="Female"
+        formControlName="gender"
+      >
+      <label for="female">Female</label>
+    </div>
+    <div class="option">
+      <input
+        type="radio"
+        id="unknown"
+        name="gender"
+        value="Unknown"
+        formControlName="gender"
+      >
+      <label for="unknown">Unknown</label>
+    </div>
+  </div>
+
+  <div>
+    <h3>Status</h3>
+    <div class="option">
+      <input
+        id="alive"
+        type="radio"
+        name="status"
+        value="alive"
+        checked
+        formControlName="status"
+      />
+      <label for="alive">Alive</label>
+    </div>
+    <div class="option">
+      <input id="dead" type="radio" name="status" value="dead" formControlName="status"/>
+      <label for="dead">Dead</label>
+    </div>
+    <div class="option">
+      <input id="unknown-status" type="radio" name="status" value="unknown" formControlName="status"/>
+      <label for="unknown-status">Unknown</label>
+    </div>
+  </div>
+</ng-container>

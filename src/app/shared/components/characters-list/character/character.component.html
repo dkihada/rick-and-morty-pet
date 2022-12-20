@@ -1,0 +1,12 @@
+<ng-container *ngIf="(character$ | async) as character">
+  <div class="wrapper">
+    <span (click)="previousPage()" class="back"><span>&#8617; </span>Back</span>
+    <img src="{{character.image}}" alt="Image {{character.name}}">
+    <div>
+      <div>Name: {{character.name}}</div>
+      <div>Gender: {{character.gender}}</div>
+      <div>Status: {{character.status}}</div>
+      <div>Species: {{character.species}}</div>
+    </div>
+  </div>
+</ng-container>

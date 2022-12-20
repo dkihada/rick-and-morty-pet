@@ -1,0 +1,5 @@
+<main>
+  <app-header [title]="'Characters'"></app-header>
+  <app-characters-list [characters]="characters" [info]="info" (numberPage)="changePage($event)"></app-characters-list>
+  <app-sidebar></app-sidebar>
+</main>

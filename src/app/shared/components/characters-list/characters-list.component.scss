@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+  padding-right: 20%;
+}
+
+.character {
+  width: 50%;
+  user-select: none;
+  .title {
+    display: inline;
+    cursor: pointer;
+  }
+
+  .title:hover {
+    color: var(--primary-color);
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    margin: 25px 0 25px 0;
+    gap: 25px;
+
+    img {
+      border-radius: 5%;
+      width: 124px;
+    }
+  }
+}
+
+pagination-controls {
+  position: fixed;
+  bottom: 0;
+  background: white;
+  width: 100%;
+
+  ::ng-deep {
+    .ngx-pagination .current {
+      background: var(--primary-color);
+    }
+  }
+}
